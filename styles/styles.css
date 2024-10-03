@@ -22,17 +22,39 @@ header h1 {
     margin: 0;
     font-size: 2em;
 }
-nav {
-    display: flex;
-    justify-content: center;
-    background-color: #1f4ba5;
+.nav-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50px; /* El área donde el hover será detectado */
+    height: 100%;
 }
+
+nav {
+    position: absolute;
+    top: 0;
+    left: -200px; /* Oculto inicialmente fuera de la vista */
+    width: 200px;
+    height: 100%;
+    display: flex;
+    flex-direction: column; /* Coloca los enlaces en una columna */
+    justify-content: center;
+    background-color: #f39c12;
+    transition: left 0.3s ease; /* Animación suave al aparecer */
+}
+
+.nav-wrapper:hover nav {
+    left: 0; /* Al pasar el mouse sobre la zona izquierda, se muestra el nav */
+}
+
 nav a {
     color: white;
     padding: 14px 20px;
     text-decoration: none;
     text-align: center;
+    display: block; /* Hace que los enlaces ocupen el ancho completo del nav */
 }
+
 nav a:hover {
     background-color: #144089;
 }

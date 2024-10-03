@@ -7,18 +7,23 @@
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
-    
+
     <header>
         <img src="./assets/img/perfil.jpeg" alt="Foto Perfil">
         <h1>Jose Luis Villota</h1>
         <p>Desarrollador - Full Stack</p>
     </header>
-    <nav>
-        <a href="#about">Sobre Mí</a>
-        <a href="#portfolio">Portafolio</a>
-        <a href="#contact">Contacto</a>
-    </nav>
-    <div class="container">
+    <section class="nav-wrapper">
+        <nav>
+            <ul>
+                <li><a href="#about">Sobre Mí</a></li>
+                <li><a href="#portfolio">Portafolio</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>        
+    </section>
+    
+    <main class="container">
         <section id="about">
             <h2 class="section-title">Sobre Mí</h2>
             <p>Desarrollador Full Stack con experiencia en el diseño y desarrollo de aplicaciones web utilizando tecnologías como HTML, CSS, JavaScript, React, Node.js y SQL Server. 
@@ -29,22 +34,22 @@
             <h2 class="section-title">Portafolio</h2>
             <div class="portfolio-item">
                 <h3>Proyecto 1</h3>
-                <p>Descripción del proyecto 1, incluyendo tecnologías utilizadas y el impacto del proyecto.</p>
+                <p>Descripción del proyecto 1</p>
             </div>
             <div class="portfolio-item">
                 <h3>Proyecto 2</h3>
-                <p>Descripción del proyecto 2, incluyendo tecnologías utilizadas y el impacto del proyecto.</p>
+                <p>Descripción del proyecto 2</p>
             </div>
             <div class="portfolio-item">
                 <h3>Proyecto 3</h3>
-                <p>Descripción del proyecto 3, incluyendo tecnologías utilizadas y el impacto del proyecto.</p>
+                <p>Descripción del proyecto 3</p>
             </div>
         </section>
         <section id="contact">
             <h2 class="section-title">Contacto</h2>
             <p>Puedes contactarme a través del siguiente correo electrónico: <a href="mailto: jlvillota1302@gmail.com">jlvillota1302@gmail.com</a></p>
         </section>
-    </div>
+    </main>
     <footer>
         &copy; 2024 Jose Luis Villota
     </footer>
