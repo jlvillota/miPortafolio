@@ -1,16 +1,55 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
 }
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #d1e4f5, #000000);
+    color: #10cae2;
+    text-align: center;
+    padding: 20px;
+    border: rgba(175, 29, 29, 0.5);
+}
+
+.intro h1 {
+    font-size: 4em;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.intro p {
+    font-size: 1.2em;
+    color: #d0e0d0;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+
 header {
-    background-color: #1428a0;
+    background-image: url('../assets/img/fullstack.jpg'); /* Ruta de la imagen de fondo */
+    background-size: cover; /* Hace que la imagen cubra todo el área del header */
+    background-position: center; /* Centra la imagen */
     color: white;
-    padding: 10px 0;
+    padding: 10px 10px;
     text-align: center;
 }
+
+header, .nav-wrapper {
+    background-image: url('../assets/img/fullstack.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
 header img {
     border-radius: 50%;
     width: 200px; /* Ajusta el tamaño de la imagen a tu gusto */
@@ -22,42 +61,121 @@ header h1 {
     margin: 0;
     font-size: 2em;
 }
+
+/* Botón de hamburguesa */
+.hamburger {
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: #f4f4f4;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 3;
+}
+
+/* Menú de navegación lateral */
 .nav-wrapper {
     position: fixed;
     top: 0;
     left: 0;
-    width: 50px; /* El área donde el hover será detectado */
     height: 100%;
+    width: 0;
+    background-color: #1428a0;
+    overflow-x: hidden;
+    transition: width 0.3s;
+    z-index: 4;
 }
 
-nav {
+.logo {
+    border-radius: 50%;
     position: absolute;
-    top: 0;
-    left: -200px; /* Oculto inicialmente fuera de la vista */
-    width: 200px;
+    bottom: 70px; /* Ajusta este valor para mover el logo hacia arriba o abajo */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px; /* Ajusta el tamaño del logo */
+    height: auto;
+}
+
+.nav-wrapper nav {
+    position: relative; /* Necesario para la posición absoluta del botón X */
+    width: 250px;
     height: 100%;
     display: flex;
-    flex-direction: column; /* Coloca los enlaces en una columna */
-    justify-content: center;
-    background-color: #f39c12;
-    transition: left 0.3s ease; /* Animación suave al aparecer */
+    flex-direction: column;
+    padding-top: 50px;
+    padding-left: 20px;
+    box-sizing: border-box;
 }
 
-.nav-wrapper:hover nav {
-    left: 0; /* Al pasar el mouse sobre la zona izquierda, se muestra el nav */
+/* Estilos para la lista de enlaces */
+.nav-wrapper nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 30px;
 }
 
-nav a {
-    color: white;
-    padding: 14px 20px;
+.nav-wrapper nav ul li {
+    margin: 20px 0;
+}
+
+#side-nav ul li a {
+    font-size: 1.5em; /* Aumenta el tamaño de la letra */
+    color: white; /* Cambia el color si es necesario */
     text-decoration: none;
-    text-align: center;
-    display: block; /* Hace que los enlaces ocupen el ancho completo del nav */
+    position: relative; /* Necesario para posicionar la imagen debajo */
+    display: block; /* Asegura que el enlace ocupe toda la línea */
 }
 
-nav a:hover {
-    background-color: #144089;
+#side-nav ul li a::after {
+    content: '';
+    display: block;
+    margin: 5px auto 0; /* Espacio alrededor de la imagen */
+    background-image: url('../assets/img/perfil.jpeg'); /* Cambia a la ruta de tu imagen */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
+
+.close-btn {
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white; /* Cambia a un color visible */
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px; /* Posiciona el botón en la parte superior derecha */
+    z-index: 5; /* Asegura que esté en el frente dentro del nav */
+}
+
+/* Overlay oscuro */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    z-index: 2;
+}
+
+/* Cuando el overlay está activo */
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Clase para abrir el menú */
+.nav-wrapper.open {
+    width: 250px;
+}
+
+/* Estilos de contenido principal */
 .container {
     padding: 20px;
     max-width: 1200px;
@@ -79,7 +197,7 @@ nav a:hover {
 footer {
     text-align: center;
     padding: 10px 0;
-    background-color: #1428a0;
+    background:linear-gradient(135deg, #d1e4f5, #000000);
     color: white;
     /*position: fixed;*/
     width: 100%;

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jose Luis Villota - Ingeniero de Sistemas</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+    <!-- Botón de menú hamburguesa dentro del header -->
+<header>
+    <button class="hamburger" onclick="toggleNav()">☰</button>
+    <img src="../assets/img/perfil.jpeg" alt="Foto Perfil">
+    <h1>Jose Luis Villota</h1>
+    <p>Desarrollador - Full Stack</p>
+</header>
+
+<!-- Menú de navegación lateral -->
+<section class="nav-wrapper">
+    <nav id="side-nav">
+        <button class="close-btn" onclick="toggleNav()">✕</button>
+        <ul>
+            <li><a href="#about">Sobre Mí</a></li>
+            <li><a href="#portfolio">Portafolio</a></li>
+            <li><a href="#contact">Contacto</a></li>
+        </ul>
+    </nav>
+</section>
+
+<!-- Overlay para oscurecer el contenido cuando el menú esté abierto -->
+<div class="overlay" onclick="toggleNav()"></div>
+
+<!-- Contenido principal -->
+<main class="container">
+    <section id="about">
+        <h2 class="section-title">Sobre Mí</h2>
+        <p>Desarrollador Full Stack con experiencia en el diseño y desarrollo de aplicaciones web utilizando tecnologías como HTML, CSS, JavaScript, React, Node.js y SQL Server. 
+            Hábil en la creación de interfaces de usuario interactivas y en la implementación de soluciones de backend eficientes. Comprometido con la optimización del rendimiento 
+            y la escalabilidad de las aplicaciones.</p>
+    </section>
+    <section id="portfolio">
+        <h2 class="section-title">Portafolio</h2>
+        <div class="portfolio-item">
+            <h3>Proyecto 1</h3>
+            <p>Descripción del proyecto 1</p>
+        </div>
+        <div class="portfolio-item">
+            <h3>Proyecto 2</h3>
+            <p>Descripción del proyecto 2</p>
+        </div>
+        <div class="portfolio-item">
+            <h3>Proyecto 3</h3>
+            <p>Descripción del proyecto 3</p>
+        </div>
+    </section>
+    <section id="contact">
+        <h2 class="section-title">Contacto</h2>
+        <p>Puedes contactarme a través del siguiente correo electrónico: <a href="mailto: jlvillota1302@gmail.com">jlvillota1302@gmail.com</a></p>
+    </section>
+</main>
+
+<!-- Pie de página -->
+<footer>
+    &copy; 2024 Jose Luis Villota Muñoz
+</footer>
+    <script src="../scripts/app.js"></script>
+</body>
+</html>
