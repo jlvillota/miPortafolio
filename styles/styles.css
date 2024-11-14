@@ -3,7 +3,7 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background: linear-gradient(135deg, #d7eeff, #4b4949);
     color: #333;
 }
 /* Sección de introducción (intro) en index.html */
@@ -13,7 +13,7 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: linear-gradient(135deg, #d1e4f5, #000000);
+    background: linear-gradient(135deg, #d7eeff, #4b4949);
     color: #10cae2;
     text-align: center;
     padding: 20px;
@@ -35,9 +35,8 @@ body {
 }
 /* Header en index.html */
 header {
-    background-image: url('./assets/img/fullstack.jpg');
-    background-size: cover; /* Asegura que la imagen cubra todo el fondo del header */
-    background-position: center; /* Centra la imagen */
+    background-size: cover; 
+    background-position: center; 
     background-repeat: no-repeat;
     color: white;
     padding: 20px 0;
@@ -46,7 +45,7 @@ header {
 }
 
 header, .nav-wrapper {
-    background-image: url('../assets/img/fullstack.jpg');
+    background-image: url('../assets/img/fullstack4.jpg');
     background-size: cover;
     background-position: center;
     color: rgb(14, 1, 3);
@@ -85,6 +84,23 @@ header h2 {
     top: 10px;
     left: 10px;
     z-index: 3;
+    animation: wiggle 1s infinite;
+}
+
+/* Animación para el botón de menú hamburguesa */
+@keyframes wiggle {
+    0%, 100% {
+        transform: translateX(0); 
+    }
+    25% {
+        transform: translateX(-5px); 
+    }
+    50% {
+        transform: translateX(5px); 
+    }
+    75% {
+        transform: translateX(-5px); 
+    }
 }
 
 /* Menú de navegación lateral en index.html */
@@ -103,15 +119,15 @@ header h2 {
 .logo {
     border-radius: 50%;
     position: absolute;
-    bottom: 70px; /* Ajusta este valor para mover el logo hacia arriba o abajo */
+    bottom: 70px; 
     left: 50%;
     transform: translateX(-50%);
-    width: 200px; /* Ajusta el tamaño del logo */
+    width: 200px; 
     height: auto;
 }
 /* Contenedor del nav en index.html */
 .nav-wrapper nav {
-    position: relative; /* Necesario para la posición absoluta del botón X */
+    position: relative; 
     width: 250px;
     height: 100%;
     display: flex;
@@ -133,18 +149,18 @@ header h2 {
 }
 /* Lista de enlaces del menú en index.html */
 #side-nav ul li a {
-    font-size: 1.5em; /* Aumenta el tamaño de la letra */
-    color: white; /* Cambia el color si es necesario */
+    font-size: 1.5em; 
+    color: white; 
     text-decoration: none;
-    position: relative; /* Necesario para posicionar la imagen debajo */
-    display: block; /* Asegura que el enlace ocupe toda la línea */
+    position: relative; 
+    display: block; 
 }
 
 #side-nav ul li a::after {
     content: '';
     display: block;
-    margin: 5px auto 0; /* Espacio alrededor de la imagen */
-    background-image: url('../assets/img/perfil.jpeg'); /* Cambia a la ruta de tu imagen */
+    margin: 5px auto 0; 
+    background-image: url('../assets/img/perfil.jpeg'); 
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -154,12 +170,12 @@ header h2 {
     font-size: 24px;
     background: none;
     border: none;
-    color: white; /* Cambia a un color visible */
+    color: white; 
     cursor: pointer;
     position: absolute;
     top: 10px;
-    right: 10px; /* Posiciona el botón en la parte superior derecha */
-    z-index: 5; /* Asegura que esté en el frente dentro del nav */
+    right: 10px; 
+    z-index: 5; 
 }
 
 /* Overlay del menú en index.html */
@@ -169,7 +185,7 @@ header h2 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    background: rgba(0, 0, 0, 0.5); 
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s;
@@ -223,23 +239,12 @@ footer {
     border-radius: 8px;
   }
 
-/* Estilo general para la tarjeta proyectos.html*/
-/*.card {
-    width: 18rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    background-color: #fff;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    font-family: 'Arial', sans-serif;
-
-}*/
 /* Estilo para el contenedor del portafolio */
 #portfolio {
-    display: flex;               /* Activa Flexbox */
-    justify-content: space-around; /* Espacio alrededor de cada tarjeta */
-    flex-wrap: wrap;             /* Permite que las tarjetas pasen a una nueva línea si no caben */
-    padding: 20px;               /* Espacio alrededor del contenedor (opcional) */
+    display: flex;               
+    justify-content: space-around; 
+    flex-wrap: wrap;             
+    padding: 20px;               /
 }
 
 /* Estilo para cada tarjeta */
@@ -248,10 +253,10 @@ footer {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    background-color: #fff;
+    background-color: #edf5f7;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     font-family: 'Arial', sans-serif;
-    margin: 20px 10px;           /* Espacio entre tarjetas (opcional) */
+    margin: 20px 10px;          
 }
 
 
@@ -305,4 +310,89 @@ footer {
     background-color: #0056b3;
 }
 
+/* Responsive para pantallas medianas (tablets) */
+@media (max-width: 768px) {
+    .intro h1 {
+        font-size: 3rem;
+    }
 
+    .intro p {
+        font-size: 1em;
+    }
+
+    header h1 {
+        font-size: 3.5rem;
+    }
+
+    header h2 {
+        font-size: 1.2rem;
+    }
+
+    /* Redimensionar imagen de perfil en el header */
+    header img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .card {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    /* Ajustar ancho del menú de navegación en tablets */
+    .nav-wrapper.open {
+        width: 200px;
+    }
+}
+
+/* Responsive para pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+    .intro h1 {
+        font-size: 2.5rem;
+    }
+
+    .intro p {
+        font-size: 0.9em;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header h2 {
+        font-size: 1rem;
+    }
+
+    /* Ajustar tamaño del botón de menú en móviles */
+    .hamburger {
+        font-size: 20px;
+    }
+
+    /* Redimensionar imagen de perfil en el header */
+    header img {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Ajustar ancho del menú de navegación en móviles */
+    .nav-wrapper.open {
+        width: 180px;
+    }
+
+    /* Ajuste de las tarjetas del portafolio */
+    #portfolio {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    /* Ajuste para el pie de página */
+    footer {
+        font-size: 0.8rem;
+    }
+}
